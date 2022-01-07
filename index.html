@@ -8,10 +8,17 @@
 </head>
 <script src="https://sandbox.src.mastercard.com/srci/integration/2/lib.js"></script>
 
-
 <body>
- <button id="xo">xo</button>
- <script src="index.js"></script>
- <p id="result"></p>
+  <select name="srcui" id="srcui">
+    <option value="null">Null</option>
+    <option value="init">Init</option>
+    <option value="lookup">Lookup</option>
+    <option value="getCards">getCards</option>
+    <option value="encryptCard">encryptCard</option>
+    <option value="checkoutWithNewCard">checkoutWithNewCard</option>
+  </select>
+ <div id="result"></div>
+<script src="index.js"></script>
 </body>
+
 </html>
