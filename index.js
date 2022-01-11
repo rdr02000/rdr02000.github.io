@@ -36,33 +36,44 @@ const initParams = {
 const selectOptions = document.getElementById("srcui")
 const instance = new Click2Pay()
 let encryptedCard
+let isInit = false;
 
 selectOptions.addEventListener('change', (async (e) => {
   var selectedValue  = selectOptions.options[selectOptions.selectedIndex].value;
 
   if (selectedValue === 'init') {
     try {
-      displayResult("result", await instance.init(initParams));
+      //debugger
+      const resp = await instance.init(initParams);
+
+      for (var i = 0; i < selectOptions.length; i++) {
+        selectOptions.options[i].disabled = false;
+      }
+      isInit = true;
+
+      displayResult("result", resp);
     }catch(e ) {
       console.log(e);
     }
   }
-  else if (selectedValue === 'lookup') {
+  else if (selectedValue === 'lookup' && isInit) {
     try {
-      displayResult("result", await instance.idLookup({email: 'test@mastercard.com'}));
+      const resp = await instance.idLookup({email: 'test@mastercard.com'});
+      displayResult("result", resp);
       //console.warn(resp)
     } catch (e) {
       console.error(e)
     }
   }
-  else if (selectedValue === 'getCards') {
+  else if (selectedValue === 'getCards' && isInit) {
     try {
-      displayResult("result", await instance.getCards());
+      const resp = await instance.getCards();
+      displayResult("result", resp);
     }catch(e) {
       console.error(e);
     }
   }
-  else if (selectedValue === 'encryptCard') {
+  else if (selectedValue === 'encryptCard' && isInit) {
     try {
       encryptedCard = await instance.encryptCard({
         primaryAccountNumber: '5555555555554444',
@@ -74,7 +85,7 @@ selectOptions.addEventListener('change', (async (e) => {
     } catch (e) {
       console.error(e)
     }
-  } else if (selectedValue === 'checkoutWithNewCard') {
+  } else if (selectedValue === 'checkoutWithNewCard' && isInit) {
     try {
 
       const iframe = document.createElement('iframe')
