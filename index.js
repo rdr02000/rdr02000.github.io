@@ -65,8 +65,8 @@ selectOptions.addEventListener('change', (async (e) => {
       const start = Date.now();
       const resp = await instance.init(initParams);
       const end = Date.now();
-
-      console.log("Init: " + end);
+      const diff = end - start;
+      console.log("Init: " + diff);
 
       // console.warn(windows.debugPayloads);
       for (var i = 0; i < selectOptions.length; i++) {
