@@ -1,8 +1,8 @@
 const initParams = {
   //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
   srcDpaId: '2360e9a2-17a7-4766-b08a-a3aef372c643',
-  cardBrands: ['mastercard', 'visa', 'amex', 'discover'],
-  //cardBrands: ['mastercard'],
+  //cardBrands: ['mastercard', 'visa', 'amex', 'discover'],
+  cardBrands: ['mastercard'],
   dpaTransactionOptions: {
     transactionAmount: {
       transactionAmount: 123,
