@@ -1,8 +1,8 @@
 const initParams = {
   //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
   srcDpaId: '2360e9a2-17a7-4766-b08a-a3aef372c643',
-  //cardBrands: ['mastercard', 'visa', 'amex', 'discover'],
-  cardBrands: ['discover'],
+  cardBrands: ['mastercard', 'visa', 'amex', 'discover'],
+  //cardBrands: ['discover'],
   dpaTransactionOptions: {
     transactionAmount: {
       transactionAmount: 123,
@@ -62,8 +62,12 @@ selectOptions.addEventListener('change', (async (e) => {
 
   if (selectedValue === 'init') {
     try {
-
+      const start = Date.now();
       const resp = await instance.init(initParams);
+      const end = Date.now();
+
+      console.log("Init: " + end);
+
       // console.warn(windows.debugPayloads);
       for (var i = 0; i < selectOptions.length; i++) {
         selectOptions.options[i].disabled = false;
