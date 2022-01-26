@@ -64,7 +64,7 @@ selectOptions.addEventListener('change', (async (e) => {
     try {
 
       const resp = await instance.init(initParams);
-      console.warn(windows.debugPayloads);
+      //console.warn(windows.debugPayloads);
       for (var i = 0; i < selectOptions.length; i++) {
         selectOptions.options[i].disabled = false;
       }
