@@ -69,7 +69,7 @@ selectOptions.addEventListener('change', (async (e) => {
         selectOptions.options[i].disabled = false;
       }
       isInit = true;
-      debugger
+    //  debugger
 
       displayResult("result", resp);
     }catch(e) {
