@@ -1,8 +1,8 @@
 const initParams = {
   //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
   srcDpaId: '2360e9a2-17a7-4766-b08a-a3aef372c643',
-  //cardBrands: ['mastercard', 'visa', 'amex', 'discover'],
-  cardBrands: ['visa'],
+  cardBrands: ['mastercard', 'visa', 'amex', 'discover'],
+  //cardBrands: ['mastercard'],
   dpaTransactionOptions: {
     transactionAmount: {
       transactionAmount: 123,
@@ -33,8 +33,27 @@ const initParams = {
     dpaPresentationName: 'SparkTmerch',
   },
 }
-const selectOptions = document.getElementById("srcui")
-const instance = new Click2Pay()
+
+const instance = new Click2Pay({debug:true});
+const debugPayloads = []
+window.debugPayloads = debugPayloads
+const log = console.log
+console.log = (namespace, type, payload) => {
+  try {
+    const [paylaodType, data] = payload
+
+    if (type === 'trace' && paylaodType === 'storing method result:') {
+        debugPayloads.push(data)
+        console.log(data);
+      }
+    } catch (e) {}
+
+    log(namespace, type, payload);
+
+}
+
+const selectOptions = document.getElementById("srcui");
+
 let encryptedCard
 let isInit = false;
 
@@ -43,16 +62,17 @@ selectOptions.addEventListener('change', (async (e) => {
 
   if (selectedValue === 'init') {
     try {
-      //debugger
-      const resp = await instance.init(initParams);
 
+      const resp = await instance.init(initParams);
+      console.warn(windows.debugPayloads);
       for (var i = 0; i < selectOptions.length; i++) {
         selectOptions.options[i].disabled = false;
       }
       isInit = true;
 
+
       displayResult("result", resp);
-    }catch(e ) {
+    }catch(e) {
       console.log(e);
     }
   }
@@ -106,8 +126,41 @@ selectOptions.addEventListener('change', (async (e) => {
 
       console.error(e)
     }
+  } else if (selectedValue == 'initiateValidation') {
+    try {
+      const resp = await instance.initiateValidation();
+      console.log(resp);
+
+    }catch (e) {
+      console.error(e)
+    }
+  } else if (selectedValue === 'checkoutWithCard') {
+    try{
+      const iframe = document.createElement('iframe')
+      iframe.style.width = '420px'
+      iframe.style.height = '620px'
+
+      document.body.appendChild(iframe)
+      const windowRef = iframe.contentWindow
+
+      const resp = await instance.checkoutWithCard({
+        "srcDigitalCardId": "361a8d27-0b74-413d-a318-db5dc568e908",
+        "windowRef": windowRef
+      })
+    }catch(e) {
+      console.error(e);
+    }
+  } else if (selectedValue === 'validate') {
+    try {
+      const resp = await instance.validate("360354");
+      console.log(resp);
+    }catch(e) {
+      console.error(e);
+    }
   }
 }));
+
+
 
 function displayResult(resultDiv, response) {
   var parElement = document.getElementById(resultDiv);
