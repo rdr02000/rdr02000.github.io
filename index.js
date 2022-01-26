@@ -44,7 +44,7 @@ console.log = (namespace, type, payload) => {
 
     if (type === 'trace' && paylaodType === 'storing method result:') {
         debugPayloads.push(data)
-        console.log(data);
+        ///console.log(data);
       }
     } catch (e) {}
 
