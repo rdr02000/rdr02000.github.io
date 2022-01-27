@@ -82,7 +82,11 @@ selectOptions.addEventListener('change', (async (e) => {
   }
   else if (selectedValue === 'lookup' && isInit) {
     try {
+      const start = Date.now();
       const resp = await instance.idLookup({email: 'test@mastercard.com'});
+      const end = Date.now();
+      const diff = end - diff;
+      console.log("Lookup " + diff);
       displayResult("result", resp);
       //console.warn(resp)
     } catch (e) {
@@ -91,7 +95,11 @@ selectOptions.addEventListener('change', (async (e) => {
   }
   else if (selectedValue === 'getCards' && isInit) {
     try {
+      const start = Date.now();
       const resp = await instance.getCards();
+      const end = Date.now();
+      const diff = end - start;
+      console.log("getCards " + diff);
       displayResult("result", resp);
     }catch(e) {
       console.error(e);
