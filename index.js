@@ -85,7 +85,7 @@ selectOptions.addEventListener('change', (async (e) => {
       const start = Date.now();
       const resp = await instance.idLookup({email: 'test@mastercard.com'});
       const end = Date.now();
-      const diff = end - diff;
+      const diff = end - start;
       console.log("Lookup " + diff);
       displayResult("result", resp);
       //console.warn(resp)
