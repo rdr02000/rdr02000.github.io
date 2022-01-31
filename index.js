@@ -174,7 +174,17 @@ selectOptions.addEventListener('change', (async (e) => {
   }
 }));
 
+function save() {
+  var data = document.getElementById("txtData").value;
+  var c = document.createElement("a");
+  c.download = "user-text.txt";
 
+  var t = new Blob([debugPayloads], {
+    type: "text/plain"
+  });
+  c.href = window.URL.createObjectURL(t);
+  c.click();
+}
 
 function displayResult(resultDiv, response) {
   var parElement = document.getElementById(resultDiv);
