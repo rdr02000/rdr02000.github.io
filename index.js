@@ -175,10 +175,10 @@ selectOptions.addEventListener('change', (async (e) => {
 }));
 
 function save() {
-  var data = document.getElementById("txtData").value;
+//  var data = document.getElementById("txtData").value;
   var c = document.createElement("a");
   c.download = "user-text.txt";
-
+debugger
   var t = new Blob([debugPayloads], {
     type: "text/plain"
   });
