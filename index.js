@@ -178,7 +178,7 @@ function save() {
 //  var data = document.getElementById("txtData").value;
   var c = document.createElement("a");
   c.download = "user-text.txt";
-debugger
+//debugger
   var t = new Blob([debugPayloads], {
     type: "text/plain"
   });
