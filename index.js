@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs');
 
 const initParams = {
   //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
@@ -46,15 +46,6 @@ console.log = (namespace, type, payload) => {
 
     if (type === 'trace' && paylaodType === 'storing method result:') {
         debugPayloads.push(data)
-
-        let data = "Learning how to write in a file."
-
-        // Write data in 'Output.txt' .
-        fs.writeFile('Output.txt', data, (err) => {
-
-    // In case of a error throw err.
-    if (err) throw err;
-})
         ///console.log(data);
       }
     } catch (e) {}
