@@ -180,7 +180,7 @@ function save() {
   c.download = "metrics.txt";
 //debugger
 console.log(debugPayloads)
-  var t = new Blob(debugPayloads, {
+  var t = new Blob([JSON.stringify(debugPayloads)], {
     type: "text/plain"
   });
   c.href = window.URL.createObjectURL(t);
