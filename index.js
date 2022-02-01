@@ -177,10 +177,10 @@ selectOptions.addEventListener('change', (async (e) => {
 function save() {
 //  var data = document.getElementById("txtData").value;
   var c = document.createElement("a");
-  c.download = "user-text.txt";
+  c.download = "metrics.txt";
 //debugger
   var t = new Blob([debugPayloads], {
-    type: "text/plain"
+    type: "application/json"
   });
   c.href = window.URL.createObjectURL(t);
   c.click();
