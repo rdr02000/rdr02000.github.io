@@ -177,9 +177,9 @@ selectOptions.addEventListener('change', (async (e) => {
 function save() {
 //  var data = document.getElementById("txtData").value;
   var c = document.createElement("a");
-  c.download = "metrics.txt";
+  c.download = "metrics.json";
 //debugger
-  var t = new Blob([debugPayloads], {
+  var t = new Blob(debugPayloads, {
     type: "application/json"
   });
   c.href = window.URL.createObjectURL(t);
