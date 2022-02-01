@@ -179,7 +179,7 @@ function save() {
   var c = document.createElement("a");
   c.download = "metrics.txt";
 //debugger
-  var t = new Blob([debugPayloads], {
+  var t = new Blob(JSON.stringify([debugPayloads]), {
     type: "application/json"
   });
   c.href = window.URL.createObjectURL(t);
