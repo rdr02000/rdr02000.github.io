@@ -171,8 +171,9 @@ selectOptions.addEventListener('change', (async (e) => {
     }catch(e) {
       console.error(e);
     }
-  }else if (selectetdValue === 'debugPayloads') {
-     displayResult("result", debugPayloads);
+  }else if (selectedValue === 'debugPayloads') {
+    console.log(debugPayloads);
+     displayResult("result", JSON.stringify(debugPayloads));
   }
 }));
 
