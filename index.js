@@ -68,7 +68,8 @@ selectOptions.addEventListener('change', (async (e) => {
       const resp = await instance.init(initParams);
       const end = Date.now();
       const diff = end - start;
-      console.log("Init: " + diff);
+      console.log("Time of Init: " + diff);
+      debugPayloads.push("Init: " + diff)
 
       // console.warn(windows.debugPayloads);
       for (var i = 0; i < selectOptions.length; i++) {
@@ -88,7 +89,8 @@ selectOptions.addEventListener('change', (async (e) => {
       const resp = await instance.idLookup({email: 'test@mastercard.com'});
       const end = Date.now();
       const diff = end - start;
-      console.log("Lookup " + diff);
+      console.log("Time of Lookup " + diff);
+      debugPayloads.push("Lookup " + diff)
       displayResult("result", resp);
       //console.warn(resp)
     } catch (e) {
@@ -101,7 +103,8 @@ selectOptions.addEventListener('change', (async (e) => {
       const resp = await instance.getCards();
       const end = Date.now();
       const diff = end - start;
-      console.log("getCards " + diff);
+      console.log("Time of getCards " + diff);
+      debugPayloads.push("getCards " + diff)
       displayResult("result", resp);
     }catch(e) {
       console.error(e);
@@ -109,12 +112,17 @@ selectOptions.addEventListener('change', (async (e) => {
   }
   else if (selectedValue === 'encryptCard' && isInit) {
     try {
+      const start = Date.now();
       encryptedCard = await instance.encryptCard({
         primaryAccountNumber: '5555555555554444',
         panExpirationMonth: '11',
         panExpirationYear: '23',
         cardSecurityCode: '123',
       })
+      const end = Date.now();
+      const diff = end -start;
+      console.log("Time of encryptCard " + diff)
+      debugPayloads.push("encryptCard " + diff);
       displayResult("result", encryptedCard);
     } catch (e) {
       console.error(e)
@@ -134,7 +142,12 @@ selectOptions.addEventListener('change', (async (e) => {
         windowRef,
       }
       console.warn(params)
+      const start = Date.now();
       const resp = await instance.checkoutWithNewCard(params)
+      const  end = Date.now();
+      const diff = end - start;
+      console.log("Time of checkoutWithNewCard " + diff);
+      debugPayloads.push("checkoutWithNewCard " + diff);
       console.warn(resp)
     } catch (e) {
 
