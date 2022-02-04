@@ -29,7 +29,11 @@ const initParams = {
         dynamicDataType: 'CARD_APPLICATION_CRYPTOGRAM_LONG_FORM',
       },
     ],
-  }
+  },
+  dpaData: {
+    dpaName: 'SparkTmerch',
+    dpaPresentationName: 'SparkTmerch',
+  },
 }
 
 const instance = new Click2Pay({debug:true});
