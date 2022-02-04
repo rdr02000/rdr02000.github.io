@@ -1,34 +1,39 @@
 //const fs = require('fs');
 
 const initParams = {
-"srcDpaId": "6441fbba-9602-4522-8ac6-bf12d1edc91a",
-"cardBrands": [
-"mastercard",
-"visa",
-"amex",
-"discover"
-],
-"dpaTransactionOptions": {
-"transactionAmount": {
-"transactionAmount": 123,
-"transactionCurrencyCode": "USD"
-},
-"threeDsPreference": "NONE",
-"consumerEmailAddressRequested": true,
-"consumerNameRequested": true,
-"consumerPhoneNumberRequested": true,
-"payloadTypeIndicatorCheckout": "PAYMENT",
-"payloadTypeIndicatorPayload": "PAYMENT",
-"dpaBillingPreference": "FULL",
-"dpaShippingPreference": "FULL",
-"dpaAcceptedBillingCountries": [],
-"dpaAcceptedShippingCountries": [],
-"dpaLocale": "en_US",
-"paymentOptions": [
-{
-"dpaDynamicDataTtlMinutes": 15,
-"dpaPanRequested": false,
-"dynamicDataType": "CARD_APPLICATION_CRYPTOGRAM_LONG_FORM"
+  //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
+  srcDpaId: '6441fbba-9602-4522-8ac6-bf12d1edc91a',
+  cardBrands: ['mastercard', 'visa', 'amex', 'discover'],
+  //cardBrands: ['discover'],
+  dpaTransactionOptions: {
+    transactionAmount: {
+      transactionAmount: 123,
+      transactionCurrencyCode: 'USD',
+    },
+    threeDsPreference: 'NONE',
+    transactionType: 'PURCHASE',
+    consumerEmailAddressRequested: true,
+    consumerNameRequested: true,
+    consumerPhoneNumberRequested: true,
+    payloadTypeIndicatorCheckout: 'PAYMENT',
+    payloadTypeIndicatorPayload: 'PAYMENT',
+    dpaBillingPreference: 'FULL',
+    dpaShippingPreference: 'FULL',
+    dpaAcceptedBillingCountries: [],
+    dpaAcceptedShippingCountries: [],
+    dpaLocale: 'en_US',
+    paymentOptions: [
+      {
+        dpaDynamicDataTtlMinutes: 15,
+        dpaPanRequested: false,
+        dynamicDataType: 'CARD_APPLICATION_CRYPTOGRAM_LONG_FORM',
+      },
+    ],
+  },
+  dpaData: {
+    dpaName: 'SparkTmerch',
+    dpaPresentationName: 'SparkTmerch',
+  },
 }
 
 const instance = new Click2Pay({debug:true});
