@@ -84,14 +84,28 @@ selectOptions.addEventListener('change', (async (e) => {
       console.log(e);
     }
   }
-  else if (selectedValue === 'lookup' && isInit) {
+  else if (selectedValue === 'lookup_true' && isInit) {
     try {
       const start = Date.now();
       const resp = await instance.idLookup({email: 'test@mastercard.com'});
       const end = Date.now();
       const diff = end - start;
       console.log("Time of Lookup " + diff);
-      debugPayloads.push("Lookup " + diff)
+      debugPayloads.push("Lookup_true " + diff)
+      displayResult("result", resp);
+      //console.warn(resp)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+  else if (selectedValue === 'lookup_false' && isInit) {
+    try {
+      const start = Date.now();
+      const resp = await instance.idLookup({email: 'does_not_exist_email@mastercard.com'});
+      const end = Date.now();
+      const diff = end - start;
+      console.log("Time of Lookup " + diff);
+      debugPayloads.push("Lookup_false " + diff)
       displayResult("result", resp);
       //console.warn(resp)
     } catch (e) {
