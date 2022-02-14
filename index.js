@@ -182,7 +182,7 @@ selectOptions.addEventListener('change', (async (e) => {
       timeDiff.methodName = "checkoutWithNewCard";
       timeDiff.responseTime = diff;
       debugPayloads.push(timeDiff);
-      console.warn(resp)3654
+      console.warn(resp);
     } catch (e) {
 
       console.error(e)
