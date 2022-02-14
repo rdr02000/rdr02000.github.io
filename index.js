@@ -60,6 +60,7 @@ const selectOptions = document.getElementById("srcui");
 let encryptedCard
 let isInit = false;
 
+const timeDiff =[]
 selectOptions.addEventListener('change', (async (e) => {
   var selectedValue  = selectOptions.options[selectOptions.selectedIndex].value;
 
@@ -70,7 +71,10 @@ selectOptions.addEventListener('change', (async (e) => {
       const end = Date.now();
       const diff = end - start;
       console.log("Time of Init: " + diff);
-      debugPayloads.push("Init: " + diff)
+      const timeDiff = {};
+      timeDiff.methodName = "Init";
+      timeDiff.responseTime = diff;
+      debugPayloads.push(timeDiff);
 
       // console.warn(windows.debugPayloads);
       for (var i = 0; i < selectOptions.length; i++) {
@@ -91,7 +95,10 @@ selectOptions.addEventListener('change', (async (e) => {
       const end = Date.now();
       const diff = end - start;
       console.log("Time of Lookup " + diff);
-      debugPayloads.push("Lookup_true " + diff)
+      const timeDiff = {};
+      timeDiff.methodName = "Lookup_true";
+      timeDiff.responseTime = diff;
+      debugPayloads.push(timeDiff);
       displayResult("result", resp);
       //console.warn(resp)
     } catch (e) {
@@ -105,7 +112,10 @@ selectOptions.addEventListener('change', (async (e) => {
       const end = Date.now();
       const diff = end - start;
       console.log("Time of Lookup " + diff);
-      debugPayloads.push("Lookup_false " + diff)
+      const timeDiff = {};
+      timeDiff.methodName = "Lookup_false";
+      timeDiff.responseTime = diff;
+      debugPayloads.push(timeDiff);
       displayResult("result", resp);
       //console.warn(resp)
     } catch (e) {
@@ -119,7 +129,10 @@ selectOptions.addEventListener('change', (async (e) => {
       const end = Date.now();
       const diff = end - start;
       console.log("Time of getCards " + diff);
-      debugPayloads.push("getCards " + diff)
+      const timeDiff = {};
+      timeDiff.methodName = "getCards";
+      timeDiff.responseTime = diff;
+      debugPayloads.push(timeDiff)
       displayResult("result", resp);
     }catch(e) {
       console.error(e);
@@ -137,7 +150,10 @@ selectOptions.addEventListener('change', (async (e) => {
       const end = Date.now();
       const diff = end -start;
       console.log("Time of encryptCard " + diff)
-      debugPayloads.push("encryptCard " + diff);
+      const timeDiff = {};
+      timeDiff.methodName = "encryptCard";
+      timeDiff.responseTime = diff;
+      debugPayloads.push(timeDiff);
       displayResult("result", encryptedCard);
     } catch (e) {
       console.error(e)
@@ -162,8 +178,11 @@ selectOptions.addEventListener('change', (async (e) => {
       const  end = Date.now();
       const diff = end - start;
       console.log("Time of checkoutWithNewCard " + diff);
-      debugPayloads.push("checkoutWithNewCard " + diff);
-      console.warn(resp)
+      const timeDiff = {};
+      timeDiff.methodName = "checkoutWithNewCard";
+      timeDiff.responseTime = diff;
+      debugPayloads.push(timeDiff);
+      console.warn(resp)3654
     } catch (e) {
 
       console.error(e)
