@@ -81,7 +81,7 @@ selectOptions.addEventListener('change', (async (e) => {
     try {
       const start = Date.now();
       const resp = await instance.init(initParams);
-      console.log("init " + resp);
+      console.log("init " + JSON.stringify(resp);
       const end = Date.now();
       const diff = end - start;
       console.log("Time of Init: " + diff);
