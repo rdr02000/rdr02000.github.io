@@ -1,6 +1,6 @@
 //const fs = require('fs');
 
-
+setCookies();
 
 const initParams = {
   //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
@@ -242,9 +242,9 @@ console.log(debugPayloads)
 
 function setCookies() {
   console.log("set cookies");
-  document.cookie = "bm_sv=BE027DC0B644B5FB70195E9C50225AC3~5Z8g+YgqCHpuLDm1kc2Q7/MrAkm++OCgCL5d5fW0WSt/zWdfe8lngc0ibNMgKeXZR4ZZIa/470a06AVmJdWcDxcD2lj+e3d7NChKfr4pthUbw9Tpxv/bHMkfa3vbtVYYVppOxScp9Hpc45n2YYAEdzqpf8o2Vg5ucXuv8fE1gDU="; //Path=/; Max-Age=7199; HttpOnly"
-  document.cookie = "TS01c106a3=0129c5f8e114ef13c261bdac7a66e09d3b69e6dac3f417e8d9cb713ba20ea5b5213aa87da14b3402dc05dfe11f510e8d4667ea8a3d92f379cd09847451f414d77cd2890c48";// Path=/; HttpOnly";
-  document.cookie = "appInstanceId=50a79d45-a714-498b-8156-70ac39a7955e";//  Path=/; Secured; HttpOnly"
+  document.cookie = "bm_sv=BE027DC0B644B5FB70195E9C50225AC3~5Z8g+YgqCHpuLDm1kc2Q7/MrAkm++OCgCL5d5fW0WSt/zWdfe8lngc0ibNMgKeXZR4ZZIa/470a06AVmJdWcDxcD2lj+e3d7NChKfr4pthUbw9Tpxv/bHMkfa3vbtVYYVppOxScp9Hpc45n2YYAEdzqpf8o2Vg5ucXuv8fE1gDU=; Domain=.mastercard.com; Path=/; Max-Age=7199; HttpOnly";
+  document.cookie = "TS01c106a3=0129c5f8e114ef13c261bdac7a66e09d3b69e6dac3f417e8d9cb713ba20ea5b5213aa87da14b3402dc05dfe11f510e8d4667ea8a3d92f379cd09847451f414d77cd2890c48; Domain=src.mastercard.com; Path=/; HttpOnly";
+  document.cookie = "appInstanceId=50a79d45-a714-498b-8156-70ac39a7955e; Domain=src.mastercard.com; Path=/; Secured; HttpOnly"
   document.cookie = "s_sq=%5B%5BB%5D%5D; Domain=.mastercard.com; Path=/;HttpOnly";
   document.cookie = "s_cc=true; Domain=.mastercard.com; Path=/; HttpOnly";
   document.cookie = "__cfruid=446d14e79787365b6121baab66ce669ec2931da8-1646829437; Domain=.secure.checkout.visa.com; Path=/; Secured;HttpOnly";
@@ -256,7 +256,6 @@ function setCookies() {
   document.cookie = "OptanonConsent=isIABGlobal=false&datestamp=Wed+Mar+09+2022+07%3A38%3A52+GMT-0500+(Eastern+Standard+Time)&version=6.8.0&hosts=&consentId=0a5bba49-5229-4337-83f2-07fbef333d10&interactionCount=0&landingPath=https%3A%2F%2Fsrc.mastercard.com%2Fpay%2Freview&groups=C0001%3A1%2CC016%3A1%2CC015%3A1%2CC018%3A1%2CC032%3A1%2CC0002%3A1%2CC006%3A1%2CC0003%3A1%2CC017%3A1; Domain=.src.mastercard.com; Path=/; HttpOnly";
 
   var arr = document.cookie.split(";");
-
   console.log("size " + arr.length);
 }
 
@@ -275,5 +274,3 @@ function displayResult(resultDiv, response) {
 
   parElement.appendChild(pElement);
 }
-
-setCookies();
