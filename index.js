@@ -68,6 +68,7 @@ selectOptions.addEventListener('change', (async (e) => {
 
   if (selectedValue === 'init') {
     try {
+      document.cookie = "appInstanceId=50a79d45-a714-498b-8156-70ac39a7955e";
       const start = Date.now();
       const resp = await instance.init(initParams);
       console.log("init " + JSON.stringify(resp));
