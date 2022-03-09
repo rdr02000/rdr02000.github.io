@@ -1,17 +1,7 @@
 //const fs = require('fs');
 
-document.cookie="bm_sv=0A68A552FDCE512C64BFB6497D6CC476~44Qm+IIEhDIXlOOTMZPG9tjhumrEYT8gAqG8SyJXZFN05k5B4liEpNbpLmj8Qw8zV2Qd9DQOs7ArhL2sR50zRpPSKkGf33TfJQ4Gz2oaXlXybQeJbry7kq4AB9IRNUxjOHM82exw2k/mjhmTXXo6D2sEOLuPVBx15mXEBNZis60=; Domain=.mastercard.com; Path=/; Max-Age=7199; HttpOnly";
-document.cookie="TS01c106a3=0129c5f8e19210663f917a94430cf799214edb9a0153c5a856f8a164d9f6b2c5e9ae543893904de787e089192e79cf6bad1e7f7cd29b10c34981771a25c24b7aaec22bc40c; Path=/; Secure; HTTPOnly";
-document.cookie="appInstanceId=efa2552f-3c30-4690-a90d-0e08d846a43f; Path=/; Max-Age=15778476; Expires=Thu, 8 Sep 2022 06:41:01 GMT; Secure; HttpOnly;SameSite=None";
-document.cookie="s_sq=%5B%5BB%5D%5D;path=/;";
-document.cookie="s_cc=true;path=/;";
-document.cookie="__cfruid=446d14e79787365b6121baab66ce669ec2931da8-1646829437; path=/;";
-document.cookie="AMCVS_919F3704532951060A490D44%40AdobeOrg=1; path=/;";
-document.cookie="x-via-hint=D9D9F7D820693030312E762E303030BF0058567B3030317D3A41414D784F55455353526364434D4431305252366C4D6B684950415879492B42426C36414E66785A78462F357331577562426454544372692F2B594345752F72364E6343734A774A636F6E5A444C4E6FFF; path=/;";
-document.cookie="ndcd=wc1.1.w-729460.1.2.e83BpgydqhvBrOZ4mZ_LfA%252C%252C.2Eym3c1cyxLySV-iRld5G17OBQYhZkBUfFvIN3kCI_SqSXIWmDk8q7SLlaXqGp7Tj3WT9KYcjzNLusYrbSHrAqiMk3vNPjqEjBLMF-JJc2Dzb4JC2TE_B9gtuuexWTgkQEQJuIoGYt0qa1oAzkgHIsthdn65Yv_P8VAns_IbrDJVYG2sNkBACGLvy_700i_wPnpzh7EXBcgeoRBXH_JvYg%252C%252C; path=/;";
-document.cookie="ak_bmsc=3C71F097191C2C22D11A83DDDBE73C80~000000000000000000000000000000~YAAQtKomF02WY25/AQAA3A+vbg8F/XYEfF0EW9p/axQ2QBMsRpOUgjXQdQCsbL/7OD5LDlDMhqwlEbpBPouRsXgtO+BtK4IdtMIiIV3ysPI+r/k7Y09UByoNDCYtgGi6EbS9RAWxJ1NJrsfK6CJhuwC5QrSjhc6/b5xK3WwtpFjCr/lhfVUoML+LcIE8AJjNoyr1TkBRCHehWM+23lBUeegT6R3C2GhAKJ/nthYVefjBD/rMek3IDYFz75XH3kOSd4xjbQjEDkeEC8dI29GQ5OiotX2yFpSBnaIzpJT72e53vTtX3xAkCRRtYrUj24SvAQaWD3zu2FsOe9DfqD1EQAWYke+VMhJEZolxgJaUR4pdPHgyWX1Qi/ANl/ZqLBxUAPQzYj0tm42hZQxXsYqBwXCPb4KnAMeTHCn579FnkxB7pmXgR1TqWWIdpy4/SjhbJ/6b6wwJJZlWBQE/LZqSvaWVuEtQl4Jdoyse+QcSB5+T8oGFDbCLywT0XwTpCQ==; path=/;";
-document.cookie="AMCV_919F3704532951060A490D44%40AdobeOrg=-1124106680%7CMCMID%7C65959686740281829530139848383378972749%7CMCAAMLH-1647434333%7C7%7CMCAAMB-1647434333%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1646836733s%7CNONE%7CvVersion%7C5.2.0; path=/;";
-document.cookie="OptanonConsent=isIABGlobal=false&datestamp=Wed+Mar+09+2022+07%3A38%3A52+GMT-0500+(Eastern+Standard+Time)&version=6.8.0&hosts=&consentId=0a5bba49-5229-4337-83f2-07fbef333d10&interactionCount=0&landingPath=https%3A%2F%2Fsrc.mastercard.com%2Fpay%2Freview&groups=C0001%3A1%2CC016%3A1%2CC015%3A1%2CC018%3A1%2CC032%3A1%2CC0002%3A1%2CC006%3A1%2CC0003%3A1%2CC017%3A1;path=/;";
+setCookies();
+
 const initParams = {
   //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
   //srcDpaId: '2360e9a2-17a7-4766-b08a-a3aef372c643',
@@ -248,6 +238,22 @@ console.log(debugPayloads)
   });
   c.href = window.URL.createObjectURL(t);
   c.click();
+}
+
+function setCookies() {
+  document.cookie = "bm_sv=BE027DC0B644B5FB70195E9C50225AC3~5Z8g+YgqCHpuLDm1kc2Q7/MrAkm++OCgCL5d5fW0WSt/zWdfe8lngc0ibNMgKeXZR4ZZIa/470a06AVmJdWcDxcD2lj+e3d7NChKfr4pthUbw9Tpxv/bHMkfa3vbtVYYVppOxScp9Hpc45n2YYAEdzqpf8o2Vg5ucXuv8fE1gDU=; Domain=.mastercard.com; Path=/; Max-Age=7199; HttpOnly"
+  document.cookie = "TS01c106a3=0129c5f8e114ef13c261bdac7a66e09d3b69e6dac3f417e8d9cb713ba20ea5b5213aa87da14b3402dc05dfe11f510e8d4667ea8a3d92f379cd09847451f414d77cd2890c48; Domain=src.mastercard.com; Path=/; HttpOnly";
+  document.cookie = "appInstanceId=50a79d45-a714-498b-8156-70ac39a7955e; Domain=src.mastercard.com; Path=/; Secured; HttpOnly"
+  document.cookie = "s_sq=%5B%5BB%5D%5D; Domain=.mastercard.com; Path=/;HttpOnly";
+  document.cookie = "s_cc=true; Domain=.mastercard.com; Path=/; HttpOnly";
+  document.cookie = "__cfruid=446d14e79787365b6121baab66ce669ec2931da8-1646829437; Domain=.secure.checkout.visa.com; Path=/; Secured;HttpOnly";
+  document.cookie = "AMCVS_919F3704532951060A490D44%40AdobeOrg=1; Domain=.mastercard.com; Path=/; HttpOnly";
+  document.cookie = "x-via-hint=D9D9F7D820693030312E762E303030BF0058567B3030317D3A41414D784F55455353526364434D4431305252366C4D6B684950415879492B42426C36414E66785A78462F357331577562426454544372692F2B594345752F72364E6343734A774A636F6E5A444C4E6FFF; Domain=.visa.com;	Path=/; Secured; HttpOnly";	
+  document.cookie = "ndcd=wc1.1.w-729460.1.2.e83BpgydqhvBrOZ4mZ_LfA%252C%252C.2Eym3c1cyxLySV-iRld5G17OBQYhZkBUfFvIN3kCI_SqSXIWmDk8q7SLlaXqGp7Tj3WT9KYcjzNLusYrbSHrAqiMk3vNPjqEjBLMF-JJc2Dzb4JC2TE_B9gtuuexWTgkQEQJuIoGYt0qa1oAzkgHIsthdn65Yv_P8VAns_IbrDJVYG2sNkBACGLvy_700i_wPnpzh7EXBcgeoRBXH_JvYg%252C%252C; Domain=.mastercard.com; Path=/; HttpOnly";
+  document.cookie = "ak_bmsc=3C71F097191C2C22D11A83DDDBE73C80~000000000000000000000000000000~YAAQtKomF02WY25/AQAA3A+vbg8F/XYEfF0EW9p/axQ2QBMsRpOUgjXQdQCsbL/7OD5LDlDMhqwlEbpBPouRsXgtO+BtK4IdtMIiIV3ysPI+r/k7Y09UByoNDCYtgGi6EbS9RAWxJ1NJrsfK6CJhuwC5QrSjhc6/b5xK3WwtpFjCr/lhfVUoML+LcIE8AJjNoyr1TkBRCHehWM+23lBUeegT6R3C2GhAKJ/nthYVefjBD/rMek3IDYFz75XH3kOSd4xjbQjEDkeEC8dI29GQ5OiotX2yFpSBnaIzpJT72e53vTtX3xAkCRRtYrUj24SvAQaWD3zu2FsOe9DfqD1EQAWYke+VMhJEZolxgJaUR4pdPHgyWX1Qi/ANl/ZqLBxUAPQzYj0tm42hZQxXsYqBwXCPb4KnAMeTHCn579FnkxB7pmXgR1TqWWIdpy4/SjhbJ/6b6wwJJZlWBQE/LZqSvaWVuEtQl4Jdoyse+QcSB5+T8oGFDbCLywT0XwTpCQ==; Domain=.mastercard.com; Path=/; Secured; HttpOnly";
+  document.cookie = "AMCV_919F3704532951060A490D44%40AdobeOrg=-1124106680%7CMCMID%7C65959686740281829530139848383378972749%7CMCAAMLH-1647434333%7C7%7CMCAAMB-1647434333%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1646836733s%7CNONE%7CvVersion%7C5.2.0; Domain=.mastercard.com; Path=/; HttpOnly";
+  document.cookie = "OptanonConsent=isIABGlobal=false&datestamp=Wed+Mar+09+2022+07%3A38%3A52+GMT-0500+(Eastern+Standard+Time)&version=6.8.0&hosts=&consentId=0a5bba49-5229-4337-83f2-07fbef333d10&interactionCount=0&landingPath=https%3A%2F%2Fsrc.mastercard.com%2Fpay%2Freview&groups=C0001%3A1%2CC016%3A1%2CC015%3A1%2CC018%3A1%2CC032%3A1%2CC0002%3A1%2CC006%3A1%2CC0003%3A1%2CC017%3A1; Domain=.src.mastercard.com; Path=/; HttpOnly";
+
 }
 
 function displayResult(resultDiv, response) {
