@@ -1,6 +1,6 @@
 //const fs = require('fs');
 
-setCookies();
+//setCookies();
 
 const initParams = {
   //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
