@@ -1,6 +1,6 @@
 //const fs = require('fs');
 
-setCookies();
+
 
 const initParams = {
   //srcDpaId: 'fa6f0599318a4912910c76d269aca923',
@@ -274,3 +274,5 @@ function displayResult(resultDiv, response) {
 
   parElement.appendChild(pElement);
 }
+
+setCookies();
