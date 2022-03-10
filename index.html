@@ -8,7 +8,7 @@
 </head>
 <script src="https://src.mastercard.com/srci/integration/2/lib.js"></script>
 <script type="module" src="https://src.mastercard.com/srci/integration/components/src-ui-kit/src-ui-kit.esm.js"></script>
-<link rel="stylesheet" href="https://src.mastercard.com/srci/integration/components/src-ui-kit/src-ui-kit"></link>
+<link rel="stylesheet" href="https://src.mastercard.com/srci/integration/components/src-ui-kit/src-ui-kit.css"></link>
 
 <body>
   <select name="srcui" id="srcui">
@@ -25,9 +25,9 @@
   </select>
   <button type="button" id="btnSave" onclick="save()">SAVE</button>
  <div id="result"></div>
- <div id="src-ui">
-   <src-card-list locale="en_US"></src-card-list>
- </div>
+
+<src-card-list locale="en_US"></src-card-list>
+<src-otp-channel-selection card-brands="mastercard" locale="en-US" type="none"></src-otp-channel-selection>
 
 
 <script src="index.js"></script>
