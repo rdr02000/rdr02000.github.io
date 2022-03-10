@@ -63,6 +63,9 @@ let encryptedCard
 let isInit = false;
 
 const timeDiff =[]
+
+//document.querySelector('')
+
 selectOptions.addEventListener('change', (async (e) => {
   var selectedValue  = selectOptions.options[selectOptions.selectedIndex].value;
 
@@ -128,7 +131,6 @@ selectOptions.addEventListener('change', (async (e) => {
   }
   else if (selectedValue === 'getCards' && isInit) {
     try {
-
       const srcCardList = document.querySelector("src-card-list");
       const start = Date.now();
       const resp = await instance.getCards();
@@ -139,8 +141,6 @@ selectOptions.addEventListener('change', (async (e) => {
       const timeDiff = {};
       timeDiff.methodName = "getCards";
       timeDiff.responseTime = diff;
-
-
 
       debugPayloads.push(timeDiff)
       displayResult("result", resp);
@@ -224,6 +224,8 @@ selectOptions.addEventListener('change', (async (e) => {
     }
   } else if (selectedValue === 'validate') {
     try {
+
+
       const resp = await instance.validate("263021");
       console.log(resp);
     }catch(e) {
