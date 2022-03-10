@@ -142,11 +142,7 @@ selectOptions.addEventListener('change', (async (e) => {
       console.error(e);
     }
   }
-  else if (selectedVale === "validate" && isInit) {
-    try {
-      console.log("to be implemented");
-    }
-  }
+
   else if (selectedValue === 'encryptCard' && isInit) {
     try {
       const start = Date.now();
