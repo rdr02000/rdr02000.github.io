@@ -128,14 +128,20 @@ selectOptions.addEventListener('change', (async (e) => {
   }
   else if (selectedValue === 'getCards' && isInit) {
     try {
+
+      const srcCardList = document.querySelector("src-card-list");
       const start = Date.now();
       const resp = await instance.getCards();
       const end = Date.now();
+      srcCardList.loadCards(resp);
       const diff = end - start;
       console.log("Time of getCards " + diff);
       const timeDiff = {};
       timeDiff.methodName = "getCards";
       timeDiff.responseTime = diff;
+
+
+
       debugPayloads.push(timeDiff)
       displayResult("result", resp);
     }catch(e) {
