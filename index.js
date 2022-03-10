@@ -245,7 +245,7 @@ function setCookies() {
   console.log("set cookies");
   //document.cookie = "bm_sv=BE027DC0B644B5FB70195E9C50225AC3~5Z8g+YgqCHpuLDm1kc2Q7/MrAkm++OCgCL5d5fW0WSt/zWdfe8lngc0ibNMgKeXZR4ZZIa/470a06AVmJdWcDxcD2lj+e3d7NChKfr4pthUbw9Tpxv/bHMkfa3vbtVYYVppOxScp9Hpc45n2YYAEdzqpf8o2Vg5ucXuv8fE1gDU=;" + " Domain=.mastercard.com;" + "Path=/; Max-Age=7199;" + "HttpOnly";
   //document.cookie = "TS01c106a3=0129c5f8e114ef13c261bdac7a66e09d3b69e6dac3f417e8d9cb713ba20ea5b5213aa87da14b3402dc05dfe11f510e8d4667ea8a3d92f379cd09847451f414d77cd2890c48; Domain=src.mastercard.com; Path=/; Secure";
-  document.cookie = "appInstanceId=50a79d45-a714-498b-8156-70ac39a7955e; Domain=.mastercard.com";
+  document.cookie = "appInstanceId=" + encodeURIComponent("50a79d45-a714-498b-8156-70ac39a7955e");// Domain=src.mastercard.com; Path=/; Secured; HttpOnly";
   //document.cookie = "s_sq=%5B%5BB%5D%5D; Domain=.mastercard.com; Path=/;Secure";
   //document.cookie = "s_cc=true; Domain=.mastercard.com; Path=/; Secure";
   //document.cookie = "__cfruid=446d14e79787365b6121baab66ce669ec2931da8-1646829437; Domain=.secure.checkout.visa.com; Path=/;SameSite=None; Secured";
