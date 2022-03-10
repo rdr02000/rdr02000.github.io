@@ -36,7 +36,7 @@ const initParams = {
   dpaData: {
     dpaName: 'SparkTmerch',
     dpaPresentationName: 'SparkTmerch',
-  },
+  }
 }
 
 const instance = new Click2Pay({debug:true});
@@ -140,6 +140,11 @@ selectOptions.addEventListener('change', (async (e) => {
       displayResult("result", resp);
     }catch(e) {
       console.error(e);
+    }
+  }
+  else if (selectedVale === "validate" && isInit) {
+    try {
+      console.log("to be implemented");
     }
   }
   else if (selectedValue === 'encryptCard' && isInit) {
