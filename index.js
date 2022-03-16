@@ -200,11 +200,14 @@ selectOptions.addEventListener('change', (async (e) => {
     }
   } else if (selectedValue == 'initiateValidation') {
     try {
-      const resp = await instance.initiateValidation({identityProvider:"SRC",identityType:"EMAIL",maskedValidationChannel:"m****2@mailinator"});
+      const resp = await instance.initiateValidation();
       console.log(resp);
-
     }catch (e) {
       console.error(e)
+    }
+    try {
+      const resp = await instance.initiateValidation("EMAIL");
+      console.log(resp);
     }
   } else if (selectedValue === 'checkoutWithCard') {
     try{
