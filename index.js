@@ -208,7 +208,7 @@ selectOptions.addEventListener('change', (async (e) => {
     try {
       //
       //const resp = await instance.initiateValidation({identityProvider:"SRC",identityType:"EMAIL",maskedValidationChannel:"m*****2@mailinator.com",validationEmailId:"EMAIL" });
-      const resp = await instance.initiateValidation("EMAIL");
+      const resp = await instance.initiateValidation({requestedValidationChannelId:"EMAIL"});
       console.log(resp);
     }catch( e) {
       console.log(e);
