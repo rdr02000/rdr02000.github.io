@@ -208,6 +208,8 @@ selectOptions.addEventListener('change', (async (e) => {
     try {
       const resp = await instance.initiateValidation("EMAIL");
       console.log(resp);
+    }catch( e) {
+      console.log(e);
     }
   } else if (selectedValue === 'checkoutWithCard') {
     try{
