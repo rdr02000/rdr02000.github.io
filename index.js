@@ -234,7 +234,7 @@ selectOptions.addEventListener('change', (async (e) => {
 
       var retVal = prompt("Enter your OTP : ", "OTP code");
       var req = {"value" : retVal};
-      const resp = await instance.validate({req: retVal });
+      const resp = await instance.validate({value: retVal });
       console.log(resp);
     }catch(e) {
       console.error(e);
