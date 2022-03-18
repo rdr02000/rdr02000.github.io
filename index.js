@@ -232,7 +232,7 @@ selectOptions.addEventListener('change', (async (e) => {
   } else if (selectedValue === 'validate') {
     try {
         var parElement = document.getElementById("result");
-      const textField = document.createElement('textField')
+      const textField = document.createElement('input')
       const button = document.createElement('button')
       button.setAttribute("id","otpSave");
       textField.setAttribute("id", "otp");
@@ -242,7 +242,7 @@ selectOptions.addEventListener('change', (async (e) => {
         const resp = await instance.validate({value: retVal });
         console.log(resp);
       })
-      
+
 
       parElement.appendChild(textField);
       parElementy.appendChild(button);
