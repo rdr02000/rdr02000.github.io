@@ -231,16 +231,24 @@ selectOptions.addEventListener('change', (async (e) => {
     }
   } else if (selectedValue === 'validate') {
     try {
-
+        var parElement = document.getElementById("result");
       const textField = document.createElement('textField')
-      textField.style.width = '420px'
-      textField.style.height = '620px'
+      const button = document.createElement('button')
+      button.setAttribute("id","otpSave");
+      textField.setAttribute("id", "otp");
 
-      document.body.appendChild(textField);
+      button.addEventListener("click", function(e) {
+        var retVal = textField.value;
+        const resp = await instance.validate({value: retVal });
+        console.log(resp);
+      })
+      
 
+      parElement.appendChild(textField);
+      parElementy.appendChild(button);
 
-      var retVal = textField.value;
-      var req = {value : retVal};
+      //var retVal = textField.value;
+      //var req = {value : retVal};
       //
       //const resp = await instance.validate({value: retVal });
     //  console.log(resp);
