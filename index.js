@@ -232,8 +232,15 @@ selectOptions.addEventListener('change', (async (e) => {
   } else if (selectedValue === 'validate') {
     try {
 
-      var retVal = prompt("Enter your OTP : ", "OTP code");
-      var req = {"value" : retVal};
+      const textField = document.createElement('textField')
+      textField.style.width = '420px'
+      textField.style.height = '620px'
+
+      document.body.appendChild(textField);
+
+
+      var retVal = textField.value;
+      var req = {value : retVal};
       //
       const resp = await instance.validate({value: retVal });
       console.log(resp);
