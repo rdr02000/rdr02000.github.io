@@ -245,7 +245,7 @@ selectOptions.addEventListener('change', (async (e) => {
 
 
       parElement.appendChild(textField);
-      parElementy.appendChild(button);
+      parElement.appendChild(button);
 
       //var retVal = textField.value;
       //var req = {value : retVal};
