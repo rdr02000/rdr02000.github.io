@@ -242,8 +242,8 @@ selectOptions.addEventListener('change', (async (e) => {
       var retVal = textField.value;
       var req = {value : retVal};
       //
-      const resp = await instance.validate({value: retVal });
-      console.log(resp);
+      //const resp = await instance.validate({value: retVal });
+    //  console.log(resp);
     }catch(e) {
       console.error(e);
     }
