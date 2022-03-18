@@ -239,7 +239,7 @@ selectOptions.addEventListener('change', (async (e) => {
 
       button.addEventListener("click", function(e) {
         var retVal = textField.value;
-        const resp = await instance.validate({value: retVal });
+        const resp = instance.validate({value: retVal });
         console.log(resp);
       })
 
