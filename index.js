@@ -291,6 +291,8 @@ function setCookies() {
 
   var arr = document.cookie.split(";");
   console.log("size " + arr.length);
+  
+  localStorage.setItem('mcsrc.enablenewinit', 'true')
 }
 
 function displayResult(resultDiv, response) {
