@@ -275,7 +275,7 @@ console.log(debugPayloads)
 }
 
 function setConfig() {
-   localStorage.setItem('mcsrc.enablenewinit', 'true')
+   //localStorage.setItem('mcsrc.enablenewinit', 'true')
 }
 
 function displayResult(resultDiv, response) {
