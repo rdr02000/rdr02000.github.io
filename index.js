@@ -4,8 +4,8 @@ setConfig();
 
 const initParams = {
   //srcDpaId: 'fa6f06599318a4912910c76d269aca923',
-  srcDpaId: '2360e9a2-17a7-4766-b08a-a3aef372c643',
-  //srcDpaId: '6441fbba-9602-4522-8ac6-bf12d1edc91a',
+  //srcDpaId: '2360e9a2-17a7-4766-b08a-a3aef372c643',
+  srcDpaId: '6441fbba-9602-4522-8ac6-bf12d1edc91a',
   cardBrands: ['mastercard', 'visa', 'amex', 'discover'],
   //cardBrands: ['discover'],
   dpaTransactionOptions: {
